@@ -62,4 +62,20 @@ $(document).on("click", "button", function() {
     $("#modalDigimon").find("#numeroDigimon").text(numero);
     });
 
+// Función para cerrar el modal
+$("#cerrarModal").on("click", function () {
+    $("#modalDigimon").modal("hide");
+    }
+    );
+
+// Función para cerrar el modal con la tecla ESC
+$(document).on("keyup", function (e) {
+    if (e.key === "Escape") {
+    $("#modalDigimon").modal("hide");
+    }
+    }
+    );
+
+    
+
 
