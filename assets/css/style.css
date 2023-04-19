@@ -122,3 +122,55 @@ footer {
   text-align: center;
 }
 
+/* Fondo gris oscuro */
+.modal-content {
+  background-color: #2a2a2a;
+  color: white;
+  text-align: center;
+  justify-items: center;
+}
+
+/* Título del modal en azul oscuro */
+.modal-header {
+  background-color: #1d1d1d;
+  border-bottom: none;
+  text-align: center;
+  justify-items: center;
+  text-shadow: #000;
+}
+.modal-title {
+  color: #0072c6;
+}
+
+/* Botón cerrar en blanco con borde en azul oscuro */
+.close {
+  color: white;
+}
+.close:hover {
+  color: #0072c6;
+}
+
+/* Detalles del Digimon en azul claro */
+#modal-digimon-name {
+  color: #0072c6;
+}
+#modal-digimon-level {
+  color: #c3c3c3;
+}
+
+/* Imagen del Digimon con borde en azul oscuro */
+#modal-digimon-img {
+  border: 2px solid #0072c6;
+}
+
+/* Botón de acción con fondo azul oscuro y texto blanco */
+.modal-footer button {
+  background-color: #0072c6;
+  color: white;
+  border: none;
+}
+.modal-footer button:hover {
+  background-color: #005eac;
+}
+
+
