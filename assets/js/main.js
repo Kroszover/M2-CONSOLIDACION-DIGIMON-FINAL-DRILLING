@@ -9,6 +9,7 @@ $.ajax({
       $("tbody").append(`
             <tr>
             <th scope="row"><p id="numero2">${i + 1}</p></th>
+            <th scope="row"> <button type="button" id="btn${data.name}" class="btn btn-dark">Ampliar</button> </th>
             <td id="dname"> <p id="dname2">${data.name}</p></td>
             <td id="dlevel"><p id="dlevel2">${data.level}</p></td>
             <td id="dimg"><img id="dimg2" src="${data.img}" alt="${data.name}"></td>
@@ -21,7 +22,7 @@ $.ajax({
     },
 });
 
-//Barra de busqueda
+//Barra de busqueda y primer evento.
 $("#barraBusqueda").on("keyup", function () {
     var texto = $(this).val().toLowerCase();
     $("table tbody tr").each(function () {
@@ -40,3 +41,25 @@ if (numResultados === 0) {
     $("table tbody tr:last-child").remove();
 }
 });
+
+
+
+//Botón y segundo evento.
+$(document).on("click", "button", function() {
+    console.log("click");
+    var id = $(this).attr("id");
+    var nombre = $(this).closest("tr").find("#dname2").text();
+    var nivel = $(this).closest("tr").find("#dlevel2").text();
+    var imagen = $(this).closest("tr").find("#dimg2").attr("src");
+    var numero = $(this).closest("tr").find("#numero2").text();
+    
+    $("#modalDigimon").modal("show");
+    console.log("modal abierto");
+    
+    $("#modalDigimon").find("#nombreDigimon").text(nombre);
+    $("#modalDigimon").find("#nivelDigimon").text(nivel);
+    $("#modalDigimon").find("#imagenDigimon").attr("src", imagen);
+    $("#modalDigimon").find("#numeroDigimon").text(numero);
+    });
+
+
